@@ -1,0 +1,30 @@
+.chatOnline{
+  display: flex;
+  margin-top: 20px;
+ 
+  ul {
+  list-style: none;
+ 
+}
+li{
+  margin: 20px; 
+}
+.img1 {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  width: 28px;
+  height: 19px;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-size: 14px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: black;
+ 
+  }
+}

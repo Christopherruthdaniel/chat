@@ -1,0 +1,89 @@
+.div{
+   display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 400px;
+    height: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+
+}
+.Top{
+    display: flex;
+    flex-direction:row;
+    box-sizing: border-box;
+    width: 385px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+
+}
+
+.conversation{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    
+    
+
+    .conversationimg{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+    .conversationName{
+        font-family: Nunito;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0.005em;
+        text-align: left;
+          
+
+    }
+    .conversationMessage{
+        font-family: Nunito;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.005em;
+        text-align: left;         
+
+    }
+   .span{
+    display: flex;
+    flex-direction: column;
+   }
+  
+}
+.conversation:click{
+    background-color:#9E9E9E ;
+}
+
+
+
+
+    .ahref{
+        position: relative;
+        left: 280px;
+        bottom: 35px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        letter-spacing: 0.005em;
+        color: #386FA4;
+      
+       }
+// .chatonline{
+//     width: 10px;
+//     height: 10px;
+//     position: absolute;
+//     border-radius: 50%;
+//     background-color: limegreen;
+//     top: 2px;
+// }
