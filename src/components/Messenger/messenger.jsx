@@ -3,6 +3,8 @@ import Conversations from '../conversations/conversations';
 import Message from '../message/message';
 import Img from '../../assets/icons/image.svg';
 import Nav from '../Nav/nav'
+import { Avatar } from '@mui/material';
+import Profilee from "../../assets/display-img.png";
 
 
 export default function Messenger() {
@@ -29,7 +31,10 @@ export default function Messenger() {
 
         <div className="chatBox">
           <div className="chatBoxWrapper">
-            
+          
+          <div className='upperchat'>
+            <Avatar alt="Profile" src={Profilee} />
+          </div>
           
           <div className="chatBoxTop">
             <Message/>
