@@ -34,22 +34,23 @@ export default function Messenger() {
           
           <div className='upperchat'>
             <Avatar alt="Profile" src={Profilee} />
+            <p>Amber Laxy <span>@Laxy4real2</span></p>
           </div>
           
           <div className="chatBoxTop">
-            <Message/>
-            <Message own={true}/>
-            <Message/>
-            <Message/>
-            <Message/>
-            <Message/>
+            <Message imgs={Profilee} chat='helo dog' />
+            <Message own={true} chat='helo dogssss' imgs={require('../../assets/avatar6.png')}/>
+            <Message imgs={Profilee} pic={Profilee} />
+            <Message imgs={Profilee} chat='hello Lion' />
+            <Message imgs={Profilee} chat='hallo'/>
+            <Message imgs={Profilee} chat='hello dog'/>
 
                 
                 </div>
             
              
                 <div className="chatBoxBottom">
-                  <textarea className='chatMessageInput' placeholder='Type a message'></textarea>
+                  <input className='chatMessageInput' placeholder='Type a message'/>
                   <button className="chatSubmitButton" >
                    <img src={Img} alt="" />
                   </button>
