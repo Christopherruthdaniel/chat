@@ -35,6 +35,9 @@ export default function Messenger() {
             <Message/>
             <Message own={true}/>
             <Message/>
+            <Message/>
+            <Message/>
+            <Message/>
 
                 
                 </div>
