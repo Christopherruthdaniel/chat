@@ -52,7 +52,7 @@ function Online({ppic,stats}) {
       backgroundColor:stats==='Online'?'green':'grey',
       height:'10px',
       width:'10px',
-      position:'absolute',
+      // position:'absolute',
       // right:1
       marginLeft:'30px',
       borderRadius:'50px',
@@ -66,7 +66,7 @@ function Online({ppic,stats}) {
 export default function Conversations() {
   const [chats, setChats] = useState([
     {
-      img:require('../../assets/sarah_dp.png'),
+      img:require('../../assets/avatar9.png'),
       Name:'Christopher Ruth',
       username:'@cruth123',
       message:'Hi dear,...',
@@ -85,13 +85,42 @@ export default function Conversations() {
 
     },
     {
-      img:require('../../assets/sarah_dp.png'),
+      img:require('../../assets/mark-avatar.png'),
+      Name:'Obbina Alex',
+      username:'@KingObi6',
+      message:'Hi Maddame',
+      stats:'Online',
+      time:'8 hours ago',
+      unread:0
+
+    },
+    {
+      img:require('../../assets/avatar9.png'),
       Name:'Christopher Ruth',
       username:'@cruth123',
       message:'Hi dear,...',
       stats:'Online',
       time:'Just now',
-      unread:100
+      unread:0
+    },
+    {
+      img:require('../../assets/sarah_dp.png'),
+      Name:'Chi chi',
+      username:'@hotbabechi',
+      message:'Lorem ipsum ',
+      stats:'Offline',
+      time:'1 hour ago',
+      unread:2
+
+    },
+    {
+      img:require('../../assets/mark-avatar.png'),
+      Name:'Obbina Alex',
+      username:'@KingObi6',
+      message:'Hi Maddame',
+      stats:'Online',
+      time:'8 hours ago',
+      unread:0
 
     },
   ])
