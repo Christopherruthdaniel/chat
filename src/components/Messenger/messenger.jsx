@@ -6,14 +6,22 @@ import Nav from '../Nav/nav'
 import { Avatar } from '@mui/material';
 import Profilee from "../../assets/display-img.png";
 import { useState } from 'react';
+import Menuimg from '../../assets/three-dots-vertical.svg'
+import Drawer from 'react-modern-drawer'
+import 'react-modern-drawer/dist/index.css'
 
-function ActiveChats() {
+function ActiveChats({toglelist,openchats}) {
   return(
 <div className="chatBoxWrapper">
           
           <div className='upperchat'>
             <Avatar alt="Profile" src={Profilee} />
             <p>Amber Laxy <span>@Laxy4real2</span></p>
+            <div className='left'>
+              <button onClick={openchats}><img src={require('../../assets/sms-icon.png')} /></button>
+              <button onClick={toglelist}><img src={Menuimg} /></button>
+
+            </div>
           </div>
           
           <div className="chatBoxTop">
@@ -51,10 +59,39 @@ function NoChat() {
 export default function Messenger() {
  
     const [ActiveChat, setActiveChat] = useState(true)
+    const [menuDrawer, setMenuDrawer] = useState(false)
+    const [chatss, setChatss] = useState(false)
+    const toggleDrawer = () => {
+      setMenuDrawer((prevState) => !prevState)
+    }
+    const toggleleftDrawer = () => {
+      setChatss((prevState) => !prevState)
+    }
   return (
-    <>
- 
+    // <>
+            
       <div className="messenger">
+      <Drawer 
+            open={menuDrawer}
+                onClose={toggleDrawer}
+                direction='right'
+            >
+          <div className="chatMenuWrapper">
+           
+           <Nav/>
+          </div>
+      </Drawer>
+      <Drawer 
+            open={chatss}
+                onClose={toggleleftDrawer}
+                direction='left'
+                wid
+            >
+          {/* <div style={{height:'100%'}} className="chatOnlineWrapper"> */}
+           
+           <Conversations/>
+          {/* </div> */}
+      </Drawer>
         <div className="chatMenu">
           <div className="chatMenuWrapper">
            
@@ -71,12 +108,12 @@ export default function Messenger() {
         </div>
 
         <div className="chatBox">
-        {ActiveChat?<ActiveChats />:<NoChat />}
+        {ActiveChat?<ActiveChats toglelist={setMenuDrawer} openchats={setChatss} />:<NoChat />}
             
           </div>
     
       </div>
     
-    </>
+    // </>
   );
 }
