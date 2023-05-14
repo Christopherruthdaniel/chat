@@ -19,7 +19,7 @@ export default function Messenger() {
           </div>
         </div>
 
-        <div className="chatOnline">
+        <div className="chatOonline">
           <div className="chatOnlineWrapper">
            
            <Conversations/>

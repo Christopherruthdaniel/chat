@@ -1,116 +1,148 @@
 import "./conversations.scss";
-import {
-    
-    
-    styled,
-    alpha,
-    InputBase,
-   
-  } from '@mui/material';
-  import SearchIcon from '@mui/icons-material/Search';
-  import Img from '../../assets/icons/image.svg';
+import { styled, alpha, InputBase, Avatar } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import SMS from "../../assets/sms-icon.png";
+import Profilee from "../../assets/avatar6.png";
+import { useState } from "react";
 
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
+  borderRadius: "20px",
+  border: "1px solid rgba(0, 0, 0, 0.2)",
+  backgroundColor: alpha(theme.palette.common.white, 0.1),
+  // marginTop:'20px',
 
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: '16px',
-    border: '1px solid rgba(0, 0, 0, 0.2)',
-    backgroundColor: alpha(theme.palette.common.white, 0.10),
-    marginTop:'20px',
-    
+  marginRight: theme.spacing(1),
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: theme.spacing(1),
+    width: "150px",
+  },
+}));
 
-    
-    marginRight: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: '200px',
-    },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '80%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  }));
-   
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "grey",
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: "inherit",
+  "& .MuiInputBase-input": {
+    padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '15ch',
-      },
+    transition: theme.transitions.create("width"),
+    // width: '100%',
+    fontSize: "10px",
+    [theme.breakpoints.up("md")]: {
+      width: "15ch",
     },
-    fontfamily: 'Nunito',
-  }));
+  },
+  fontfamily: "Nunito",
+}));
 
-  
+function Online({ppic,stats}) {
+  return(
+    <div className="conversationimg">
+    <div style={{
+      backgroundColor:stats==='Online'?'green':'grey',
+      height:'10px',
+      width:'10px',
+      position:'absolute',
+      // right:1
+      marginLeft:'30px',
+      borderRadius:'50px',
+      zIndex:2
 
-export default function Conversations(){
-    return(
-        <>
-
-            <div className="Top">
-              <p>Messages</p>
-              <img src={Img} alt="" />
-
-            </div>
-     
-        <div className="div">
-
-        <div className="searchTop">
-              <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder='Search message'
-                  inputProps={{ ' Nunito': 'search' }}
-                />
-              </Search>
-              
-              <a  className="ahref" href="/"> Message Request</a>
-            </div>
-          
-     
-            <div className="conversation">
-           <img className="conversationimg" 
-           src=""
-           alt=""
-           />
-           <div className="span">
-           <span className="conversationName">Ruth Recennine</span>
-           <span className="conversationMessage">i guess the work will be done by tomorrow</span>
-           
-           
-        </div>   
-        </div>
-     
-
-         
-          
-             <div className="conversation">
-           <img className="conversationimg" 
-           src=""
-           alt=""
-           />
-           <div className="span">
-           <span className="conversationName">Ruth Recennine</span>
-           <span className="conversationMessage">i guess the work will be done by tomorrow</span>
-           
-           
-        </div>   
-        </div>
-        </div>
-        </>
-    )
+    }}/>
+        <Avatar alt="Profile" src={ppic} />
+    </div>
+  )
 }
+export default function Conversations() {
+  const [chats, setChats] = useState([
+    {
+      img:require('../../assets/sarah_dp.png'),
+      Name:'Christopher Ruth',
+      username:'@cruth123',
+      message:'Hi dear,...',
+      stats:'Online',
+      time:'Just now',
+      unread:0
+    },
+    {
+      img:require('../../assets/sarah_dp.png'),
+      Name:'Chi chi',
+      username:'@hotbabechi',
+      message:'Lorem ipsum ',
+      stats:'Offline',
+      time:'1 hour ago',
+      unread:2
 
-  
+    },
+    {
+      img:require('../../assets/sarah_dp.png'),
+      Name:'Christopher Ruth',
+      username:'@cruth123',
+      message:'Hi dear,...',
+      stats:'Online',
+      time:'Just now',
+      unread:100
+
+    },
+  ])
+  return (
+    <>
+      <div className="Top">
+        <Avatar alt="Profile" src={Profilee} />
+
+        <p>Messages</p>
+        <img src={SMS} alt="" />
+      </div>
+
+      <div className="div">
+        <div className="searchTop">
+          <Search sx={{ display: { xs: "none", md: "flex" } }}>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search message"
+              inputProps={{ " Nunito": "search" }}
+            />
+          </Search>
+
+          <a className="ahref" href="/">
+            Message Request
+          </a>
+        </div>
+        <div className="AllConversation">
+          {chats.map(i=>{
+            return(
+              <div className="conversation">
+            <Online ppic={i.img} stats={i.stats} />
+            {/* <img className="conversationimg" src="" alt="" /> */}
+            <div className="span">
+              <span className="conversationName">{i.Name} <span style={{color:'gray',fontWeight:'normal'}}>{i.username}</span></span>
+              <span className="conversationMessage">
+                {i.message}
+              </span>
+              <span className="conversationMessage" style={{color:'gray',fontWeight:'normal'}}>{i.unread>0?<span style={{backgroundColor:'#386fa4', padding:"2px",fontSize:'10px',color:"white", borderRadius:'50px'}}>{i.unread}+</span>:null} {i.time}</span>
+            </div>
+          </div>
+            )
+          })}
+          
+
+          
+          
+        </div>
+        
+      </div>
+    </>
+  );
+}

@@ -12,13 +12,22 @@
 .Top{
     display: flex;
     flex-direction:row;
-    box-sizing: border-box;
-    width: 385px;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    // box-sizing: border-box;  
+    width: 100%;
     height: 60px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 16px;
 
 }
+.Top>p{
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
 
 .conversation{
     display: flex;
@@ -67,18 +76,29 @@
 
 
     .ahref{
-        position: relative;
-        left: 280px;
-        bottom: 35px;
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 140%;
-        letter-spacing: 0.005em;
+        
         color: #386FA4;
-      
+        font-size: 11px;
+        text-decoration: none;
        }
+.searchTop{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid #9E9E9E;
+}
+.AllConversation{
+    height: 100%;
+    overflow: -moz-scrollbars-vertical;    
+    overflow-y: scroll;
+    // overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+    width: 100%;
+}
 // .chatonline{
 //     width: 10px;
 //     height: 10px;

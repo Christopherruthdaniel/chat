@@ -17,14 +17,17 @@ li{
 
 a {
   text-decoration: none;
-  width: 28px;
-  height: 19px;
+  width: 150px;
+  height: 20px;
+  // background-color: aqua;
   font-family: 'Nunito';
   font-style: normal;
   font-size: 14px;
   line-height: 10px;
   letter-spacing: -0.02em;
   color: black;
- 
+ display: flex;
+ flex-direction: row;
+ align-items: center;
   }
 }
