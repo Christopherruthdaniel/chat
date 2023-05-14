@@ -6,20 +6,25 @@ import {
     InputBase,
    
   } from '@mui/material';
+
   // import { Link } from "react-router-dom";
   // import { useContext } from "react";
-  // import React, { useState } from 'react';
+  import React, { useState } from 'react';
   import logo from '../../assets/chatbeep_logo.png';
   import SearchIcon from '@mui/icons-material/Search';
   import  Home  from '../../assets/homeicon.svg';
   import  Tour  from '../../assets/tour-icon.png';
   import  Beep from '../../assets/beep-icon.png';
   import Notification  from '../../assets/notification-icon.svg';
+  import Moon  from '../../assets/moon-fill.svg';
+  import Profile  from '../../assets/person-square.svg';
+
   import './Header.scss';
  
   const Logo = styled('img')(({ theme }) => ({
-    width: '50px',
-    minWidth: '50px',
+    width: '40px',
+    height:'40px',
+    // minWidth: '50px',
   }));
   
   const Search = styled('div')(({ theme }) => ({
@@ -33,6 +38,7 @@ import {
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
       width: '450px',
+      height:'40px',
       left: '60px',
     },
   }));
@@ -69,53 +75,106 @@ import {
   
   
     return (
-      <AppBar position='static' className='header' color='secondary'>
-        <Toolbar className='toolbar'>
-          <Logo src={logo} />
-          <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder='Search…'
-              inputProps={{ ' Nunito': 'search' }}
-            />
-          </Search>
-          <nav>
-      <ul>
-        <li>
-          <a href="/">
-            <img className='img1' src={Home} alt="Home" />
-          Home
-          </a>
-        </li>
-        <li>
-          <a href="/">
-          <img className='img1' src={Tour} alt="Tour" />
-            Tour
-          </a>
-        </li>
-        <li>
-          <a href="/about">
-          <img className='img1' src={Beep} alt="Beep" />
-            Beep</a>
-        </li>
-        <li>
-          <a href="/contact">
-          <img className='img1' src={Notification} alt="Notification" />
-            Notification
-          </a>
-        </li>
+    //   <AppBar position='static' className='header' color='secondary'>
+    //     <Toolbar className='toolbar'>
+    //       <Logo src={logo} />
+    //       <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
+    //         <SearchIconWrapper>
+    //           <SearchIcon />
+    //         </SearchIconWrapper>
+    //         <StyledInputBase
+    //           placeholder='Search…'
+    //           inputProps={{ ' Nunito': 'search' }}
+    //         />
+    //       </Search>
+    //       <nav>
+    //   <ul className='leftnavlist'>
+    //     <li>
+    //       <a href="/">
+    //         <img className='img1' src={Home} alt="Home" />
+    //       Home
+    //       </a>
+    //     </li>
+    //     <li>
+    //       <a href="/">
+    //       <img className='img1' src={Tour} alt="Tour" />
+    //         Tour
+    //       </a>
+    //     </li>
+    //     <li>
+    //       <a href="/about">
+    //       <img className='img1' src={Beep} alt="Beep" />
+    //         Beep</a>
+    //     </li>
+    //     <li>
+    //       <a href="/contact">
+    //       <img className='img1' src={Notification} alt="Notification" />
+    //         Notification
+    //       </a>
+    //     </li>
         
-      </ul>
+    //   </ul>
       
-    </nav>
+    // </nav>
   
   
        
-        </Toolbar>
+    //     </Toolbar>
      
-      </AppBar>
+    //   </AppBar>
+    <div className='Header'>
+      <Logo src={logo}  />
+      <Search sx={{ display: { xs: 'none', md: 'flex' } }}>
+             <SearchIconWrapper>
+               <SearchIcon />
+             </SearchIconWrapper>
+             <StyledInputBase
+               placeholder='Search…'
+               inputProps={{ ' Nunito': 'search' }}
+             />
+      </Search>
+
+      <nav>
+       <ul className='leftnavlist'>
+         <li>
+           <a href="/">
+             <img className='img1' src={Home} alt="Home" />
+           Home
+           </a>
+         </li>
+         <li>
+           <a href="/">
+           <img className='img1' src={Tour} alt="Tour" />
+             Tour
+           </a>
+         </li>
+         <li>
+           <a href="/about">
+           <img className='img1' src={Beep} alt="Beep" />
+             Beep</a>
+         </li>
+         <li>
+           <a href="/contact">
+           <img className='img1' src={Notification} alt="Notification" />
+             Notification
+           </a>
+         </li>
+         <li>
+           <a href="/contact">
+           <img className='img1' src={Profile} alt="Notification" />
+            Profile
+           </a>
+         </li>
+         <li>
+           <a href="/contact">
+           <img className='img1' src={Moon} alt="Notification" />
+           </a>
+         </li>
+        
+       </ul>
+      
+       </nav>
+    </div>
     );
   };
   
