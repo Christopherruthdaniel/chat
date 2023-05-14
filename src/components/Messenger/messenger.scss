@@ -56,12 +56,37 @@
     justify-content:center;
  
   }
-  
+  .NoChatt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .NoChatt>.title{
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 0px;
+  }
+  .NoChatt>.subTitle{
+    font-size: 15px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    margin-top: 0px;
+  }
+  .NoChatt>button{
+    font-size: 15px;
+    background-color: #386fa4;
+    border-radius: 100px;
+    color: white;
+    border: 0px;
+    padding: 10px;
+  }
   .chatMessageInput {
     height: 40px;
     
     width: 90%;
-    padding: 10px 0;
+    padding: 10px ;
     border: none;
     border-bottom: 0.5px solid gray;
   }

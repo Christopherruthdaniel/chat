@@ -5,32 +5,11 @@ import Img from '../../assets/icons/image.svg';
 import Nav from '../Nav/nav'
 import { Avatar } from '@mui/material';
 import Profilee from "../../assets/display-img.png";
+import { useState } from 'react';
 
-
-export default function Messenger() {
- 
-    
-  return (
-    <>
- 
-      <div className="messenger">
-        <div className="chatMenu">
-          <div className="chatMenuWrapper">
-           
-           <Nav/>
-          </div>
-        </div>
-
-        <div className="chatOonline">
-          <div className="chatOnlineWrapper">
-           
-           <Conversations/>
-          </div>
-          
-        </div>
-
-        <div className="chatBox">
-          <div className="chatBoxWrapper">
+function ActiveChats() {
+  return(
+<div className="chatBoxWrapper">
           
           <div className='upperchat'>
             <Avatar alt="Profile" src={Profilee} />
@@ -57,6 +36,43 @@ export default function Messenger() {
                 </div>
             
             </div>
+  )
+}
+
+function NoChat() {
+  return(
+<div className='NoChatt'>
+              <p className="title">Select a message</p>
+              <p className="subTitle">Choose from current chat or start a new one.</p>
+              <button>New Message</button>
+            </div>
+  )
+}
+export default function Messenger() {
+ 
+    const [ActiveChat, setActiveChat] = useState(true)
+  return (
+    <>
+ 
+      <div className="messenger">
+        <div className="chatMenu">
+          <div className="chatMenuWrapper">
+           
+           <Nav/>
+          </div>
+        </div>
+
+        <div className="chatOonline">
+          <div className="chatOnlineWrapper">
+           
+           <Conversations/>
+          </div>
+          
+        </div>
+
+        <div className="chatBox">
+        {ActiveChat?<ActiveChats />:<NoChat />}
+            
           </div>
     
       </div>
